@@ -22,7 +22,16 @@ namespace sessions_api.Controllers
         {
             _logger = logger;
         }
-
+        
+        /// <summary>
+        /// Gets the weather forecast
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /WeatherForecast
+        ///
+        /// </remarks>
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
