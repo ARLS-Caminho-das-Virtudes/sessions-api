@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -26,6 +23,10 @@ namespace sessions_api.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
+        /// <summary>
+        /// Endpoint constructor
+        /// </summary>
+        /// <param name="logger">Logger service</param>
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
