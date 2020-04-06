@@ -1,12 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace sessions_api.Controllers
 {
+
+    /// <summary>
+    /// Weather Forecast endpoint
+    /// </summary>
+    [Produces("application/json")]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -32,7 +40,10 @@ namespace sessions_api.Controllers
         ///     GET /WeatherForecast
         ///
         /// </remarks>
+        /// <returns>Collection of weather forecast</returns>
+        /// <response code="200">Returns weather forecast</response>
         [HttpGet]
+        [ProducesResponseTypeAttribute(StatusCodes.Status200OK)]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
